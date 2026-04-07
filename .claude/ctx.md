@@ -9,6 +9,7 @@
 - Let's Encrypt SSL 证书签发成功（有效期至 2026-07-06，自动续期已配置）
 - 域名 carveway.com.cn / www.carveway.com.cn HTTPS 全部正常，HTTP 自动跳转 HTTPS
 - ICP 备案号写入 Footer：粤ICP备2026036874号
+- /ctx 跨端同步方案落地（.claude/ctx.md 存入 Git，换端 git pull 即恢复）
 
 ## 待继续
 - rqiudev/Carveway 旧仓库未删除（需登录 rqiudev 账号手动删，或忽略）
@@ -19,11 +20,11 @@
 - 服务器 SSH 端口 2222（非标准），别名 mainland
 - Let's Encrypt 证书路径：/etc/letsencrypt/live/carveway.com.cn/（软链接指向 carveway.com.cn-0001）
 - certbot 用 pip3 安装（apt 版本有 Python 依赖冲突，不要用 apt 版本）
-- nginx 配置：/opt/services/_infra/conf.d/carveway.conf（infra 栈管理，改后需 docker exec nginx-proxy nginx -s reload）
+- nginx 配置：/opt/services/_infra/conf.d/carveway.conf（改后需 docker exec nginx-proxy nginx -s reload）
 - commit message 加 [skip ci] 可跳过 GitHub Actions 部署触发
 
 ## 当前状态
-- https://carveway.com.cn → 200 正常
-- nginx-proxy 容器运行中（80/443 均开放）
+- https://carveway.com.cn → 200 正常，HTTPS 证书有效
+- nginx-proxy 容器运行中（80/443 均开放，安全组已放行）
 - carveway-web 容器运行中
 - GitHub Actions 最近一次部署：success
