@@ -33,41 +33,46 @@ jobs:
           NODE_ENV: production
 
       - name: Setup SSH
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_HOST: ${{ secrets.SSH_HOST }}
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
-          chmod 600 ~/.ssh/deploy_key
-          ssh-keyscan -p 2222 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
-          cat >> ~/.ssh/config << 'EOF'
-          Host deploy-target
-            HostName ${{ secrets.SSH_HOST }}
-            User ${{ secrets.SSH_USER }}
-            Port 2222
-            IdentityFile ~/.ssh/deploy_key
-            ControlMaster auto
-            ControlPath /tmp/ssh_mux_%h_%p_%r
-            ControlPersist 10m
-            ServerAliveInterval 30
-            ConnectTimeout 30
-          EOF
+          mkdir -p "$HOME/.ssh"
+          echo "$SSH_PRIVATE_KEY" > "$HOME/.ssh/deploy_key"
+          chmod 600 "$HOME/.ssh/deploy_key"
+          ssh-keyscan -p 2222 -H "$SSH_HOST" >> "$HOME/.ssh/known_hosts" 2>/dev/null
+          chmod 644 "$HOME/.ssh/known_hosts"
 
       - name: Sync out/ to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
         run: |
           rsync -avz --delete --checksum \
-            -e "ssh -F ~/.ssh/config" \
-            out/ deploy-target:${{ env.DEPLOY_PATH }}/out/
+            -e "ssh -i $HOME/.ssh/deploy_key -p 2222 -o StrictHostKeyChecking=no" \
+            out/ "$SSH_USER@$SSH_HOST:${{ env.DEPLOY_PATH }}/out/"
 
       - name: Sync deploy configs
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
         run: |
-          rsync -avz -e "ssh -F ~/.ssh/config" \
-            deploy/ deploy-target:${{ env.DEPLOY_PATH }}/deploy/
-          rsync -avz -e "ssh -F ~/.ssh/config" \
+          SSH_CMD="ssh -i $HOME/.ssh/deploy_key -p 2222 -o StrictHostKeyChecking=no"
+          rsync -avz -e "$SSH_CMD" \
+            deploy/ "$SSH_USER@$SSH_HOST:${{ env.DEPLOY_PATH }}/deploy/"
+          rsync -avz -e "$SSH_CMD" \
             docker-compose.prebuilt.yml \
-            deploy-target:${{ env.DEPLOY_PATH }}/docker-compose.yml
+            "$SSH_USER@$SSH_HOST:${{ env.DEPLOY_PATH }}/docker-compose.yml"
 
       - name: Deploy on server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
         run: |
-          ssh -F ~/.ssh/config deploy-target << 'ENDSSH'
+          ssh -i "$HOME/.ssh/deploy_key" \
+              -p 2222 \
+              -o StrictHostKeyChecking=no \
+              "$SSH_USER@$SSH_HOST" << 'ENDSSH'
             set -e
             cd /opt/services/carveway-web
             echo "=== Building image ==="
