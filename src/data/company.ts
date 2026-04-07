@@ -11,7 +11,7 @@ export const company = {
   email: 'terry.wu@carveway.com.cn',
   website: 'https://carveway.com.cn',
   address: '深圳市南山区西丽街道阳光社区松白路1059号百旺二工业园3栋厂房501',
-  icp: '', // ICP 备案号待补充
+  icp: '粤ICP备2026036874号',
 } as const;
 
 type NavItem = {
