@@ -1,0 +1,23 @@
+services:
+  carveway-web:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.prebuilt
+    container_name: carveway-web
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - carveway_net
+      - infra_net
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  carveway_net:
+    name: carveway_net
+  infra_net:
+    external: true

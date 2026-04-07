@@ -1,0 +1,82 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  DEPLOY_PATH: /opt/services/carveway-web
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static site
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p 2222 -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null
+          cat >> ~/.ssh/config << 'EOF'
+          Host deploy-target
+            HostName ${{ secrets.SSH_HOST }}
+            User ${{ secrets.SSH_USER }}
+            Port 2222
+            IdentityFile ~/.ssh/deploy_key
+            ControlMaster auto
+            ControlPath /tmp/ssh_mux_%h_%p_%r
+            ControlPersist 10m
+            ServerAliveInterval 30
+            ConnectTimeout 30
+          EOF
+
+      - name: Sync out/ to server
+        run: |
+          rsync -avz --delete --checksum \
+            -e "ssh -F ~/.ssh/config" \
+            out/ deploy-target:${{ env.DEPLOY_PATH }}/out/
+
+      - name: Sync deploy configs
+        run: |
+          rsync -avz -e "ssh -F ~/.ssh/config" \
+            deploy/ deploy-target:${{ env.DEPLOY_PATH }}/deploy/
+          rsync -avz -e "ssh -F ~/.ssh/config" \
+            docker-compose.prebuilt.yml \
+            deploy-target:${{ env.DEPLOY_PATH }}/docker-compose.yml
+
+      - name: Deploy on server
+        run: |
+          ssh -F ~/.ssh/config deploy-target << 'ENDSSH'
+            set -e
+            cd /opt/services/carveway-web
+            echo "=== Building image ==="
+            docker compose -p carveway-web build --no-cache
+            echo "=== Starting container ==="
+            docker compose -p carveway-web up -d
+            echo "=== Pruning old images ==="
+            docker image prune -f
+            echo "=== Container status ==="
+            docker ps | grep carveway-web
+            echo "Deploy done: $(date)"
+          ENDSSH
