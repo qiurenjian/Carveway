@@ -121,6 +121,23 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4 text-xs text-white/30">
             {company.icp && <span>{company.icp}</span>}
+            {company.beian && (
+              <a
+                href={`https://beian.mps.gov.cn/#/query/webSearch?code=${company.beian.code}`}
+                rel="noreferrer"
+                target="_blank"
+                className="flex items-center gap-1 hover:text-white/60 transition-colors"
+              >
+                <Image
+                  src="/images/gongan.png"
+                  alt="公安备案"
+                  width={14}
+                  height={15}
+                  className="opacity-60"
+                />
+                {company.beian.number}
+              </a>
+            )}
             <Link href="/about/" className="hover:text-white/60 transition-colors">关于我们</Link>
             <Link href="/contact/" className="hover:text-white/60 transition-colors">联系我们</Link>
           </div>

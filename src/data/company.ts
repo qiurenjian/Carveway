@@ -12,6 +12,7 @@ export const company = {
   website: 'https://carveway.com.cn',
   address: '深圳市南山区西丽街道阳光社区松白路1059号百旺二工业园3栋厂房501',
   icp: '粤ICP备2026036874号',
+  beian: { number: '粤公网安备44030002011755号', code: '44030002011755' },
 } as const;
 
 type NavItem = {
