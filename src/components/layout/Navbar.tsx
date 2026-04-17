@@ -15,6 +15,8 @@ const productImages: Record<string, string> = {
   '/products/dd-motors/': '/images/products/dd-motor.png',
   '/products/platforms/': '/images/platforms/platform-1.png',
   '/products/voice-coil/': '/images/products/voice-coil-kplr.png',
+  '/products/dexterous-hands/': '/images/products/dexterous-hand-kdh5f.png',
+  '/products/joint-modules/': '/images/products/joint-module-kjm30.png',
 };
 
 export default function Navbar() {

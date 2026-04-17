@@ -17,6 +17,8 @@ const filters = [
   { label: 'DD直驱', slug: 'dd-motors' },
   { label: '运动平台', slug: 'platforms' },
   { label: '音圈', slug: 'voice-coil' },
+  { label: '灵巧手', slug: 'dexterous-hands' },
+  { label: '关节模组', slug: 'joint-modules' },
 ];
 
 export default function ProductsPage() {
@@ -35,7 +37,7 @@ export default function ProductsPage() {
             产品中心
           </h1>
           <p className="mt-2 text-white/60">
-            六大产品系列，覆盖高速高精传动全场景
+            八大产品系列，覆盖高速高精传动全场景
           </p>
         </div>
       </section>

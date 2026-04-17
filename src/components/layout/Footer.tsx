@@ -12,6 +12,8 @@ const productLinks = [
   { name: 'DD直驱电机', href: '/products/dd-motors/' },
   { name: '精密运动平台', href: '/products/platforms/' },
   { name: '音圈执行器', href: '/products/voice-coil/' },
+  { name: '灵巧手', href: '/products/dexterous-hands/' },
+  { name: '关节模组', href: '/products/joint-modules/' },
 ];
 
 const industryLinks = ['半导体行业', '智能装备', '医疗器械', '新能源行业', '激光加工', '玻璃检测'];

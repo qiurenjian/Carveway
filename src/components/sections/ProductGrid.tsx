@@ -55,6 +55,22 @@ const categories = [
     href: '/products/voice-coil/',
     image: '/images/products/voice-coil-kplr.png',
   },
+  {
+    name: '灵巧手',
+    models: 'KDH-5F · KDH-5F-Pro · KDH-3F',
+    desc: '仿人五指灵巧手，15-20自由度，精准力控',
+    spec: '定位精度 ±0.05mm',
+    href: '/products/dexterous-hands/',
+    image: '/images/products/dexterous-hand-hero.png',
+  },
+  {
+    name: '关节模组',
+    models: 'KJM-10 · KJM-30 · KJM-60 · KJM-100',
+    desc: '高性能机器人关节执行器，集成电机减速器',
+    spec: '扭矩 10-100Nm',
+    href: '/products/joint-modules/',
+    image: '/images/products/joint-module-hero.png',
+  },
 ];
 
 export default function ProductGrid() {
@@ -63,7 +79,7 @@ export default function ProductGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="产品中心"
-          subtitle="六大产品系列，覆盖高速高精传动全场景"
+          subtitle="八大产品系列，覆盖高速高精传动全场景"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {categories.map((cat, i) => (

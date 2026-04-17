@@ -33,6 +33,8 @@ export const navigation: NavItem[] = [
       { name: 'DD直驱电机', href: '/products/dd-motors/' },
       { name: '精密运动平台', href: '/products/platforms/' },
       { name: '音圈执行器', href: '/products/voice-coil/' },
+      { name: '灵巧手', href: '/products/dexterous-hands/' },
+      { name: '关节模组', href: '/products/joint-modules/' },
     ],
   },
   { name: '应用领域', href: '/applications/' },

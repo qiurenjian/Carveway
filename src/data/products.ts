@@ -387,6 +387,197 @@ export const productCategories: ProductCategory[] = [
       },
     ],
   },
+  {
+    slug: 'dexterous-hands',
+    title: '灵巧手',
+    subtitle: 'Dexterous Hand',
+    image: '/images/products/dexterous-hand-kdh5f.png',
+    heroImage: '/images/products/dexterous-hand-hero.png',
+    description:
+      '高精度仿人五指灵巧手，采用先进的传感器和控制算法，实现精准的力控和位置控制，广泛应用于人形机器人、协作机器人等领域。',
+    applications: [
+      '人形机器人手部系统',
+      '协作机器人精密操作',
+      '医疗康复训练设备',
+      '科研教学平台',
+      '精密装配与检测',
+    ],
+    models: [
+      {
+        name: 'KDH-5F 五指标准型灵巧手',
+        description:
+          '15自由度仿人五指灵巧手，适用于人形机器人和服务机器人。每指3个关节，实现灵活的抓取和操作动作。',
+        highlights: [
+          '15个自由度，灵活操作',
+          '单指负载3-5kg',
+          '重复定位精度±0.1mm',
+          'EtherCAT/CAN通讯接口',
+        ],
+        image: '/images/products/dexterous-hand-kdh5f.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KDH-5F-15', 'KDH-5F-20'] },
+          { name: '自由度', unit: 'DOF', values: [15, 15] },
+          { name: '单指负载', unit: 'kg', values: [3, 5] },
+          { name: '重复定位精度', unit: 'mm', values: ['±0.1', '±0.1'] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT', 'EtherCAT/CAN'] },
+          { name: '重量', unit: 'kg', values: [1.2, 1.5] },
+          { name: '最大张开角度', unit: '°', values: [180, 180] },
+          { name: '响应时间', unit: 'ms', values: ['<10', '<10'] },
+        ],
+      },
+      {
+        name: 'KDH-5F-Pro 五指增强型灵巧手',
+        description:
+          '20自由度高精度灵巧手，拇指4个关节，其他指各4个关节。具备力控功能，适用于精密装配和医疗手术辅助等高精度应用。',
+        highlights: [
+          '20个自由度，超高灵活性',
+          '单指负载5-8kg',
+          '重复定位精度±0.05mm',
+          '力控精度±0.1N',
+        ],
+        image: '/images/products/dexterous-hand-kdh5f-pro.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KDH-5F-Pro'] },
+          { name: '自由度', unit: 'DOF', values: [20] },
+          { name: '单指负载', unit: 'kg', values: [8] },
+          { name: '重复定位精度', unit: 'mm', values: ['±0.05'] },
+          { name: '力控精度', unit: 'N', values: ['±0.1'] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT/CAN/RS485'] },
+          { name: '重量', unit: 'kg', values: [1.8] },
+          { name: '最大张开角度', unit: '°', values: [200] },
+          { name: '响应时间', unit: 'ms', values: ['<5'] },
+        ],
+      },
+      {
+        name: 'KDH-3F 三指夹爪型灵巧手',
+        description:
+          '9自由度三指夹爪，每指3个关节。结构紧凑，负载能力强，适用于工业抓取和物流分拣等应用场景。',
+        highlights: [
+          '9个自由度',
+          '单指负载5-10kg',
+          '结构紧凑',
+          '高可靠性',
+        ],
+        image: '/images/products/dexterous-hand-kdh3f.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KDH-3F-09'] },
+          { name: '自由度', unit: 'DOF', values: [9] },
+          { name: '单指负载', unit: 'kg', values: [10] },
+          { name: '重复定位精度', unit: 'mm', values: ['±0.1'] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT/CAN'] },
+          { name: '重量', unit: 'kg', values: [1.0] },
+          { name: '最大张开角度', unit: '°', values: [120] },
+          { name: '响应时间', unit: 'ms', values: ['<10'] },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'joint-modules',
+    title: '关节模组',
+    subtitle: 'Joint Module',
+    image: '/images/products/joint-module-kjm30.png',
+    heroImage: '/images/products/joint-module-hero.png',
+    description:
+      '高性能机器人关节执行器，集成无刷电机、行星减速器、编码器和驱动器，提供精准的位置和力矩控制，适用于各类机器人关节驱动。',
+    applications: [
+      '人形机器人关节驱动',
+      '协作机器人手臂关节',
+      '四足机器人腿部关节',
+      '外骨骼机器人',
+      'AGV/AMR转向驱动',
+    ],
+    models: [
+      {
+        name: 'KJM-10 小扭矩关节模组',
+        description:
+          '轻量化设计，适用于轻型协作机器人和服务机器人。额定扭矩10Nm，峰值扭矩30Nm，重量≤0.8kg。',
+        highlights: [
+          '额定扭矩10Nm，峰值30Nm',
+          '重复定位精度±0.02°',
+          '重量≤0.8kg',
+          '多种减速比可选',
+        ],
+        image: '/images/products/joint-module-kjm10.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KJM-10-50', 'KJM-10-100'] },
+          { name: '额定扭矩', unit: 'Nm', values: [10, 10] },
+          { name: '峰值扭矩', unit: 'Nm', values: [30, 30] },
+          { name: '减速比', unit: '', values: ['50:1', '100:1'] },
+          { name: '重复定位精度', unit: '°', values: ['±0.02', '±0.02'] },
+          { name: '重量', unit: 'kg', values: [0.7, 0.8] },
+          { name: '额定转速', unit: 'rpm', values: [60, 30] },
+          { name: '通讯接口', unit: '', values: ['CAN', 'CAN'] },
+        ],
+      },
+      {
+        name: 'KJM-30 中扭矩关节模组',
+        description:
+          '中等扭矩输出，适用于协作机器人和人形机器人。额定扭矩30Nm，峰值扭矩90Nm，提供多种减速比选择。',
+        highlights: [
+          '额定扭矩30Nm，峰值90Nm',
+          '重复定位精度±0.01°',
+          '重量≤1.5kg',
+          '高性价比',
+        ],
+        image: '/images/products/joint-module-kjm30.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KJM-30-50', 'KJM-30-100', 'KJM-30-160'] },
+          { name: '额定扭矩', unit: 'Nm', values: [30, 30, 30] },
+          { name: '峰值扭矩', unit: 'Nm', values: [90, 90, 90] },
+          { name: '减速比', unit: '', values: ['50:1', '100:1', '160:1'] },
+          { name: '重复定位精度', unit: '°', values: ['±0.01', '±0.01', '±0.01'] },
+          { name: '重量', unit: 'kg', values: [1.3, 1.4, 1.5] },
+          { name: '额定转速', unit: 'rpm', values: [60, 30, 19] },
+          { name: '通讯接口', unit: '', values: ['CAN', 'CAN', 'CAN'] },
+        ],
+      },
+      {
+        name: 'KJM-60 大扭矩关节模组',
+        description:
+          '大扭矩输出，适用于工业机器人和重载协作机器人。额定扭矩60Nm，峰值扭矩180Nm，高刚性设计。',
+        highlights: [
+          '额定扭矩60Nm，峰值180Nm',
+          '重复定位精度±0.01°',
+          '重量≤2.5kg',
+          '高刚性设计',
+        ],
+        image: '/images/products/joint-module-kjm60.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KJM-60-100', 'KJM-60-160'] },
+          { name: '额定扭矩', unit: 'Nm', values: [60, 60] },
+          { name: '峰值扭矩', unit: 'Nm', values: [180, 180] },
+          { name: '减速比', unit: '', values: ['100:1', '160:1'] },
+          { name: '重复定位精度', unit: '°', values: ['±0.01', '±0.01'] },
+          { name: '重量', unit: 'kg', values: [2.3, 2.5] },
+          { name: '额定转速', unit: 'rpm', values: [30, 19] },
+          { name: '通讯接口', unit: '', values: ['CAN', 'CAN'] },
+        ],
+      },
+      {
+        name: 'KJM-100 超大扭矩关节模组',
+        description:
+          '超大扭矩输出，适用于工业机器人和特种机器人。额定扭矩100Nm，峰值扭矩300Nm，承载能力强。',
+        highlights: [
+          '额定扭矩100Nm，峰值300Nm',
+          '重复定位精度±0.01°',
+          '重量≤4.0kg',
+          '超强承载能力',
+        ],
+        image: '/images/products/joint-module-kjm100.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KJM-100-100', 'KJM-100-160', 'KJM-100-200'] },
+          { name: '额定扭矩', unit: 'Nm', values: [100, 100, 100] },
+          { name: '峰值扭矩', unit: 'Nm', values: [300, 300, 300] },
+          { name: '减速比', unit: '', values: ['100:1', '160:1', '200:1'] },
+          { name: '重复定位精度', unit: '°', values: ['±0.01', '±0.01', '±0.01'] },
+          { name: '重量', unit: 'kg', values: [3.5, 3.8, 4.0] },
+          { name: '额定转速', unit: 'rpm', values: [30, 19, 15] },
+          { name: '通讯接口', unit: '', values: ['CAN', 'CAN', 'CAN'] },
+        ],
+      },
+    ],
+  },
 ];
 
 export function getCategoryBySlug(slug: string) {
