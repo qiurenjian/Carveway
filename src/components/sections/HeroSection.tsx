@@ -11,6 +11,10 @@ const heroImages = [
   { src: '/images/products/ironless-motor-hero.png', label: '无铁芯直线电机', href: '/products/ironless-motors/' },
   { src: '/images/products/dd-motor-hero.png', label: 'DD直驱电机', href: '/products/dd-motors/' },
   { src: '/images/products/tubular-motor-hero.png', label: '微型管状电机', href: '/products/tubular-motors/' },
+  { src: '/images/platforms/platform-1.png', label: '精密运动平台', href: '/products/platforms/' },
+  { src: '/images/products/voice-coil-kplr.png', label: '音圈执行器', href: '/products/voice-coil/' },
+  { src: '/images/products/dexterous-hand-hero.png', label: '灵巧手', href: '/products/dexterous-hands/' },
+  { src: '/images/products/joint-module-hero.png', label: '关节模组', href: '/products/joint-modules/' },
 ];
 
 const features = [
@@ -148,35 +152,6 @@ export default function HeroSection() {
                     </div>
                   </Link>
                 </motion.div>
-              ))}
-            </div>
-
-            {/* Bottom two more products */}
-            <div className="grid grid-cols-2 gap-3 mt-3">
-              {[
-                { src: '/images/platforms/platform-1.png', label: '精密运动平台', href: '/products/platforms/' },
-                { src: '/images/products/voice-coil-kplr.png', label: '音圈执行器', href: '/products/voice-coil/' },
-              ].map((img) => (
-                <Link
-                  key={img.label}
-                  href={img.href}
-                  className="group block relative bg-white/5 border border-white/10 rounded-xl overflow-hidden hover:border-primary/40 hover:bg-white/8 transition-all duration-300"
-                >
-                  <div className="relative h-24 p-3">
-                    <Image
-                      src={img.src}
-                      alt={img.label}
-                      fill
-                      className="object-contain p-2 group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 1024px) 0px, 200px"
-                    />
-                  </div>
-                  <div className="px-3 pb-3 text-center">
-                    <span className="text-xs text-white/60 group-hover:text-white/80 transition-colors">
-                      {img.label}
-                    </span>
-                  </div>
-                </Link>
               ))}
             </div>
           </motion.div>
