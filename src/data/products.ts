@@ -394,13 +394,13 @@ export const productCategories: ProductCategory[] = [
     image: '/images/products/dexterous-hand-kdh5f.png',
     heroImage: '/images/products/dexterous-hand-hero.png',
     description:
-      '高精度仿人五指灵巧手，采用先进的传感器和控制算法，实现精准的力控和位置控制，广泛应用于人形机器人、协作机器人等领域。',
+      '高精度仿人五指灵巧手，采用先进的传感器和控制算法，实现精准的力控和位置控制。每个手指独立驱动，可实现复杂的抓取和操作动作，广泛应用于人形机器人、协作机器人和科研教学等领域。',
     applications: [
       '人形机器人手部系统',
       '协作机器人精密操作',
-      '医疗康复训练设备',
-      '科研教学平台',
+      '科研教学与实验平台',
       '精密装配与检测',
+      '医疗康复训练设备',
     ],
     models: [
       {
