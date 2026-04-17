@@ -66,8 +66,8 @@ const categories = [
   {
     name: '关节模组',
     models: 'KJM-10 · KJM-30 · KJM-60 · KJM-100',
-    desc: '高性能机器人关节执行器，集成电机减速器',
-    spec: '扭矩 10-100Nm',
+    desc: '集成行星滚柱丝杠、力传感器，人形机器人专用',
+    spec: '推力达 8000N',
     href: '/products/joint-modules/',
     image: '/images/products/joint-module-hero.png',
   },
