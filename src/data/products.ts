@@ -26,6 +26,89 @@ export type ProductCategory = {
 
 export const productCategories: ProductCategory[] = [
   {
+    slug: 'servo-drivers',
+    title: '伺服驱动器',
+    subtitle: 'Servo Drivers',
+    image: '/images/products/servo-driver-ksd.png',
+    heroImage: '/images/products/servo-driver-hero.png',
+    description:
+      '凯为传动伺服驱动器系列采用先进的数字信号处理技术，支持多种通讯协议，具有高响应速度、高控制精度、低噪音等特点。完美匹配直线电机、DD马达等高性能电机，广泛应用于半导体、激光加工、精密检测等高端装备领域。',
+    applications: [
+      '半导体制造设备',
+      '激光切割与打标',
+      '精密检测设备',
+      '高速贴片机',
+      '数控机床',
+      '医疗影像设备',
+    ],
+    models: [
+      {
+        name: 'KSD-L 轻载系列',
+        description:
+          '小功率伺服驱动器，功率范围100W-750W，DC24V/48V供电，支持EtherCAT/CANopen通讯协议。体积小巧，高性价比，适用于小型自动化设备和轻载应用场景。',
+        highlights: ['功率100W-750W', 'DC24V/48V', 'EtherCAT/CANopen', '体积小巧'],
+        image: '/images/products/servo-driver-ksd-l.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KSD-L-100', 'KSD-L-200', 'KSD-L-400', 'KSD-L-750'] },
+          { name: '额定功率', unit: 'W', values: [100, 200, 400, 750] },
+          { name: '输入电压', unit: 'VDC', values: [24, 24, 48, 48] },
+          { name: '额定电流', unit: 'A', values: [5, 10, 10, 18] },
+          { name: '峰值电流', unit: 'A', values: [15, 30, 30, 54] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT', 'EtherCAT', 'CANopen', 'CANopen'] },
+          { name: '控制模式', unit: '', values: ['位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩'] },
+        ],
+      },
+      {
+        name: 'KSD-M 标准系列',
+        description:
+          '通用型伺服驱动器，功率范围1kW-3kW，AC220V供电，支持EtherCAT/CANopen/Modbus多种通讯协议。通用性强，稳定可靠，适用于各类工业自动化设备。',
+        highlights: ['功率1kW-3kW', 'AC220V', '多协议支持', '稳定可靠'],
+        image: '/images/products/servo-driver-ksd-m.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KSD-M-1K', 'KSD-M-1.5K', 'KSD-M-2K', 'KSD-M-3K'] },
+          { name: '额定功率', unit: 'kW', values: [1, 1.5, 2, 3] },
+          { name: '输入电压', unit: 'VAC', values: [220, 220, 220, 220] },
+          { name: '额定电流', unit: 'A', values: [5, 7.5, 10, 15] },
+          { name: '峰值电流', unit: 'A', values: [15, 22.5, 30, 45] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT', 'EtherCAT', 'CANopen', 'Modbus'] },
+          { name: '控制模式', unit: '', values: ['位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩'] },
+        ],
+      },
+      {
+        name: 'KSD-H 高性能系列',
+        description:
+          '高性能伺服驱动器，功率范围3.5kW-7.5kW，AC220V/380V供电，支持EtherCAT/CANopen/Profinet通讯协议。高动态响应，支持多轴同步控制，适用于高精度、高速度应用场景。',
+        highlights: ['功率3.5kW-7.5kW', 'AC220V/380V', '高动态响应', '多轴同步'],
+        image: '/images/products/servo-driver-ksd-h.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KSD-H-3.5K', 'KSD-H-5K', 'KSD-H-7.5K'] },
+          { name: '额定功率', unit: 'kW', values: [3.5, 5, 7.5] },
+          { name: '输入电压', unit: 'VAC', values: [220, 380, 380] },
+          { name: '额定电流', unit: 'A', values: [18, 15, 20] },
+          { name: '峰值电流', unit: 'A', values: [54, 45, 60] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT', 'Profinet', 'Profinet'] },
+          { name: '控制模式', unit: '', values: ['位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩'] },
+        ],
+      },
+      {
+        name: 'KSD-DD 直驱专用系列',
+        description:
+          '直驱电机专用伺服驱动器，功率范围500W-5kW，AC220V供电，支持EtherCAT/CANopen通讯协议。低速大扭矩控制，高精度位置控制，专为DD直驱电机优化设计。',
+        highlights: ['功率500W-5kW', '低速大扭矩', '高精度位置控制', 'DD电机优化'],
+        image: '/images/products/servo-driver-ksd-dd.png',
+        specs: [
+          { name: '型号', unit: '', values: ['KSD-DD-500', 'KSD-DD-1K', 'KSD-DD-3K', 'KSD-DD-5K'] },
+          { name: '额定功率', unit: 'W', values: [500, 1000, 3000, 5000] },
+          { name: '输入电压', unit: 'VAC', values: [220, 220, 220, 220] },
+          { name: '额定电流', unit: 'A', values: [3, 5, 15, 25] },
+          { name: '峰值电流', unit: 'A', values: [9, 15, 45, 75] },
+          { name: '通讯接口', unit: '', values: ['EtherCAT', 'EtherCAT', 'CANopen', 'CANopen'] },
+          { name: '控制模式', unit: '', values: ['位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩', '位置/速度/力矩'] },
+        ],
+      },
+    ],
+  },
+  {
     slug: 'linear-motors',
     title: '有铁芯直线电机',
     subtitle: 'Iron-Core Linear Motors',
@@ -291,103 +374,6 @@ export const productCategories: ProductCategory[] = [
     ],
   },
   {
-    slug: 'platforms',
-    title: '精密运动平台',
-    subtitle: 'Precision Motion Platforms',
-    image: '/images/platforms/platform-1.png',
-    heroImage: '/images/platforms/platform-2.png',
-    description:
-      '凯为传动精密运动平台采用直驱直线电机驱动，大理石平台系统稳定性好，可实现微米(um)级定位精度。根据客户需求客制化定制，广泛应用于半导体、激光加工、检测设备等高精度场景。',
-    applications: [
-      '半导体加工检测设备',
-      '玻璃检测行业',
-      '激光行业',
-      '精密数控机床',
-      '高端医疗器械',
-      'LED封装检测',
-    ],
-    models: [
-      {
-        name: '大理石龙门双驱精密运动平台',
-        description:
-          'XYZ工作台，X轴底座为大理石横梁，为三轴精密定位平台。龙门结构，横梁随XY轴运动，双Y轴各由1个驱动器驱动。直线电机驱动，光栅尺或磁栅尺反馈，um级重复定位精度。',
-        highlights: ['大理石横梁', '三轴精密定位', 'um级重复精度', '可定制行程'],
-        image: '/images/platforms/platform-3.png',
-        specs: [
-          { name: '参数', unit: '', values: ['X轴(上轴)', 'Y1/Y2轴(下轴)'] },
-          { name: '速度', unit: 'mm/s', values: ['<1500', '<1500'] },
-          { name: '加速度', unit: 'G', values: ['<1', '<1'] },
-          { name: '定位精度', unit: 'μm', values: ['≤±1.5', '≤±1.5'] },
-          { name: '重复定位精度', unit: 'μm', values: ['≤±1', '≤±1'] },
-          { name: '直线度', unit: 'μm', values: ['≤±2/300mm', '≤±2/300mm'] },
-        ],
-      },
-      {
-        name: '十字精密运动平台',
-        description:
-          'XY工作台，可以实现微米级重复定位精度。最大速度1500mm/s，最大加速度2G。直线电机驱动，光栅尺或磁栅尺反馈，采用板金+风琴罩双重防尘方式。',
-        highlights: ['微米级精度', '最大速度1500mm/s', '风琴罩双重防尘', '可选大理石/铝型材'],
-        image: '/images/platforms/platform-4.png',
-        specs: [
-          { name: '参数', unit: '', values: ['X轴(上轴)', 'Y轴(下轴)'] },
-          { name: '有效行程', unit: 'mm', values: ['100-600', '100-600'] },
-          { name: '最大速度', unit: 'm/s', values: [1.5, 1.5] },
-          { name: '最大加速度', unit: 'G', values: [2, 2] },
-          { name: '重复精度', unit: 'μm', values: ['±1', '±1'] },
-          { name: '绝对精度', unit: 'μm', values: ['3(补偿后)', '3(补偿后)'] },
-        ],
-      },
-    ],
-  },
-  {
-    slug: 'voice-coil',
-    title: '音圈执行器',
-    subtitle: 'Voice Coil Actuators',
-    image: '/images/products/voice-coil-kplr.png',
-    heroImage: '/images/products/kplr-hero.png',
-    description:
-      'KPLR直线旋转音圈执行器集直线与旋转运动于一体，力重复精度高，参数可调，高速高频，使用寿命达亿次。广泛应用于半导体、光电等行业高力控精度生产组装场景。',
-    applications: [
-      '半导体芯片贴装',
-      '光电器件组装',
-      '精密检测设备',
-      '医疗精密组装',
-    ],
-    models: [
-      {
-        name: 'KPLR-20-15 直线旋转音圈执行器',
-        description:
-          '集直线行程和旋转功能于一体，力重复精度在±3g以内，满足半导体、光电等行业高力控精度生产组装需求。产品设计紧凑轻薄，空载可达30Hz以上，使用寿命上亿次。',
-        highlights: [
-          '力重复精度±3g',
-          '寿命达亿次',
-          '直线+旋转一体',
-          '真空气路',
-          '空载30Hz+',
-        ],
-        image: '/images/products/voice-coil-kplr.png',
-        drawings: [
-          { label: '订购说明', src: '/images/drawings/kplr-order.png' },
-          { label: '技术参数', src: '/images/drawings/kplr-params.png' },
-          { label: '尺寸图', src: '/images/drawings/kplr-drawing.png' },
-        ],
-        specs: [
-          { name: '型号', unit: '', values: ['KPLR-20-15'] },
-          { name: '峰值推力', unit: 'N', values: [16.5] },
-          { name: '持续推力', unit: 'N', values: [8] },
-          { name: '总行程', unit: 'mm', values: [15] },
-          { name: '力重复精度', unit: 'g', values: ['±3'] },
-          { name: '力常数', unit: 'N/A', values: [6.7] },
-          { name: '最大转速', unit: 'rpm', values: [2000] },
-          { name: '位置重复定位精度', unit: 'μm', values: ['±2'] },
-          { name: '直线行程分辨率', unit: 'μm', values: [0.5] },
-          { name: '整体质量', unit: 'g', values: [600] },
-          { name: '尺寸', unit: 'mm', values: ['160×83×20'] },
-        ],
-      },
-    ],
-  },
-  {
     slug: 'dexterous-hands',
     title: '灵巧手',
     subtitle: 'Dexterous Hand',
@@ -570,6 +556,103 @@ export const productCategories: ProductCategory[] = [
           { name: '重量', unit: 'kg', values: [3.5, 3.8, 4.0] },
           { name: '通讯接口', unit: '', values: ['EtherCAT', 'EtherCAT', 'CANopen'] },
           { name: '防护等级', unit: '', values: ['IP40', 'IP40', 'IP40'] },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'platforms',
+    title: '精密运动平台',
+    subtitle: 'Precision Motion Platforms',
+    image: '/images/platforms/platform-1.png',
+    heroImage: '/images/platforms/platform-2.png',
+    description:
+      '凯为传动精密运动平台采用直驱直线电机驱动，大理石平台系统稳定性好，可实现微米(um)级定位精度。根据客户需求客制化定制，广泛应用于半导体、激光加工、检测设备等高精度场景。',
+    applications: [
+      '半导体加工检测设备',
+      '玻璃检测行业',
+      '激光行业',
+      '精密数控机床',
+      '高端医疗器械',
+      'LED封装检测',
+    ],
+    models: [
+      {
+        name: '大理石龙门双驱精密运动平台',
+        description:
+          'XYZ工作台，X轴底座为大理石横梁，为三轴精密定位平台。龙门结构，横梁随XY轴运动，双Y轴各由1个驱动器驱动。直线电机驱动，光栅尺或磁栅尺反馈，um级重复定位精度。',
+        highlights: ['大理石横梁', '三轴精密定位', 'um级重复精度', '可定制行程'],
+        image: '/images/platforms/platform-3.png',
+        specs: [
+          { name: '参数', unit: '', values: ['X轴(上轴)', 'Y1/Y2轴(下轴)'] },
+          { name: '速度', unit: 'mm/s', values: ['<1500', '<1500'] },
+          { name: '加速度', unit: 'G', values: ['<1', '<1'] },
+          { name: '定位精度', unit: 'μm', values: ['≤±1.5', '≤±1.5'] },
+          { name: '重复定位精度', unit: 'μm', values: ['≤±1', '≤±1'] },
+          { name: '直线度', unit: 'μm', values: ['≤±2/300mm', '≤±2/300mm'] },
+        ],
+      },
+      {
+        name: '十字精密运动平台',
+        description:
+          'XY工作台，可以实现微米级重复定位精度。最大速度1500mm/s，最大加速度2G。直线电机驱动，光栅尺或磁栅尺反馈，采用板金+风琴罩双重防尘方式。',
+        highlights: ['微米级精度', '最大速度1500mm/s', '风琴罩双重防尘', '可选大理石/铝型材'],
+        image: '/images/platforms/platform-4.png',
+        specs: [
+          { name: '参数', unit: '', values: ['X轴(上轴)', 'Y轴(下轴)'] },
+          { name: '有效行程', unit: 'mm', values: ['100-600', '100-600'] },
+          { name: '最大速度', unit: 'm/s', values: [1.5, 1.5] },
+          { name: '最大加速度', unit: 'G', values: [2, 2] },
+          { name: '重复精度', unit: 'μm', values: ['±1', '±1'] },
+          { name: '绝对精度', unit: 'μm', values: ['3(补偿后)', '3(补偿后)'] },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'voice-coil',
+    title: '音圈执行器',
+    subtitle: 'Voice Coil Actuators',
+    image: '/images/products/voice-coil-kplr.png',
+    heroImage: '/images/products/kplr-hero.png',
+    description:
+      'KPLR直线旋转音圈执行器集直线与旋转运动于一体，力重复精度高，参数可调，高速高频，使用寿命达亿次。广泛应用于半导体、光电等行业高力控精度生产组装场景。',
+    applications: [
+      '半导体芯片贴装',
+      '光电器件组装',
+      '精密检测设备',
+      '医疗精密组装',
+    ],
+    models: [
+      {
+        name: 'KPLR-20-15 直线旋转音圈执行器',
+        description:
+          '集直线行程和旋转功能于一体，力重复精度在±3g以内，满足半导体、光电等行业高力控精度生产组装需求。产品设计紧凑轻薄，空载可达30Hz以上，使用寿命上亿次。',
+        highlights: [
+          '力重复精度±3g',
+          '寿命达亿次',
+          '直线+旋转一体',
+          '真空气路',
+          '空载30Hz+',
+        ],
+        image: '/images/products/voice-coil-kplr.png',
+        drawings: [
+          { label: '订购说明', src: '/images/drawings/kplr-order.png' },
+          { label: '技术参数', src: '/images/drawings/kplr-params.png' },
+          { label: '尺寸图', src: '/images/drawings/kplr-drawing.png' },
+        ],
+        specs: [
+          { name: '型号', unit: '', values: ['KPLR-20-15'] },
+          { name: '峰值推力', unit: 'N', values: [16.5] },
+          { name: '持续推力', unit: 'N', values: [8] },
+          { name: '总行程', unit: 'mm', values: [15] },
+          { name: '力重复精度', unit: 'g', values: ['±3'] },
+          { name: '力常数', unit: 'N/A', values: [6.7] },
+          { name: '最大转速', unit: 'rpm', values: [2000] },
+          { name: '位置重复定位精度', unit: 'μm', values: ['±2'] },
+          { name: '直线行程分辨率', unit: 'μm', values: [0.5] },
+          { name: '整体质量', unit: 'g', values: [600] },
+          { name: '尺寸', unit: 'mm', values: ['160×83×20'] },
         ],
       },
     ],

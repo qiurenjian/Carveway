@@ -8,6 +8,14 @@ import SectionHeader from '@/components/ui/SectionHeader';
 
 const categories = [
   {
+    name: '伺服驱动器',
+    models: 'KSD-L · KSD-M · KSD-H · KSD-DD',
+    desc: '高响应速度、高控制精度，支持多种通讯协议',
+    spec: '功率达 7.5kW',
+    href: '/products/servo-drivers/',
+    image: '/images/products/servo-driver-hero.png',
+  },
+  {
     name: '有铁芯直线电机',
     models: 'KPT · KPF · KPH',
     desc: '高推力密度，高刚性，适用于高响应速度场景',
@@ -40,28 +48,20 @@ const categories = [
     image: '/images/products/dd-motor-hero.png',
   },
   {
-    name: '精密运动平台',
-    models: '龙门平台 · 十字平台',
-    desc: '大理石/铝基材，微米级重复定位精度，支持客制化',
-    spec: '定位精度 ≤±1μm',
-    href: '/products/platforms/',
-    image: '/images/platforms/platform-1.png',
-  },
-  {
-    name: '音圈执行器',
-    models: 'KPLR',
-    desc: '直线旋转一体，力重复精度±3g，寿命达亿次',
-    spec: '力精度 ±3g',
-    href: '/products/voice-coil/',
-    image: '/images/products/voice-coil-kplr.png',
-  },
-  {
     name: '灵巧手',
     models: 'KDH-5F · KDH-5F-Pro · KDH-3F',
     desc: '仿人五指灵巧手，15-20自由度，精准力控',
     spec: '定位精度 ±0.05mm',
     href: '/products/dexterous-hands/',
     image: '/images/products/dexterous-hand-hero.png',
+  },
+  {
+    name: '精密运动平台',
+    models: '龙门平台 · 十字平台',
+    desc: '大理石/铝基材，微米级重复定位精度，支持客制化',
+    spec: '定位精度 ≤±1μm',
+    href: '/products/platforms/',
+    image: '/images/platforms/platform-1.png',
   },
   {
     name: '关节模组',
@@ -71,6 +71,14 @@ const categories = [
     href: '/products/joint-modules/',
     image: '/images/products/joint-module-hero.png',
   },
+  {
+    name: '音圈执行器',
+    models: 'KPLR',
+    desc: '直线旋转一体，力重复精度±3g，寿命达亿次',
+    spec: '力精度 ±3g',
+    href: '/products/voice-coil/',
+    image: '/images/products/voice-coil-kplr.png',
+  },
 ];
 
 export default function ProductGrid() {
@@ -79,7 +87,7 @@ export default function ProductGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="产品中心"
-          subtitle="八大产品系列，覆盖高速高精传动全场景"
+          subtitle="九大产品系列，覆盖高速高精传动全场景"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {categories.map((cat, i) => (

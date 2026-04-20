@@ -9,6 +9,7 @@ import { navigation, company } from '@/data/company';
 import { cn } from '@/lib/utils';
 
 const productImages: Record<string, string> = {
+  '/products/servo-drivers/': '/images/products/servo-driver-ksd.png',
   '/products/linear-motors/': '/images/products/linear-motor-kpt.png',
   '/products/ironless-motors/': '/images/products/ironless-motor-kpu.png',
   '/products/tubular-motors/': '/images/products/tubular-motor-kpr.png',

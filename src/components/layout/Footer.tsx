@@ -6,14 +6,15 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { company } from '@/data/company';
 
 const productLinks = [
+  { name: '伺服驱动器', href: '/products/servo-drivers/' },
   { name: '有铁芯直线电机', href: '/products/linear-motors/' },
   { name: '无铁芯直线电机', href: '/products/ironless-motors/' },
   { name: '微型管状直线电机', href: '/products/tubular-motors/' },
   { name: 'DD直驱电机', href: '/products/dd-motors/' },
-  { name: '精密运动平台', href: '/products/platforms/' },
-  { name: '音圈执行器', href: '/products/voice-coil/' },
   { name: '灵巧手', href: '/products/dexterous-hands/' },
+  { name: '精密运动平台', href: '/products/platforms/' },
   { name: '关节模组', href: '/products/joint-modules/' },
+  { name: '音圈执行器', href: '/products/voice-coil/' },
 ];
 
 const industryLinks = ['半导体行业', '智能装备', '医疗器械', '新能源行业', '激光加工', '玻璃检测'];

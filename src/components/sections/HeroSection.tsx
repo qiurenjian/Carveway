@@ -7,14 +7,15 @@ import { ArrowRight, Zap, Target, Shield } from 'lucide-react';
 import { company } from '@/data/company';
 
 const heroImages = [
+  { src: '/images/products/servo-driver-hero.png', label: '伺服驱动器', href: '/products/servo-drivers/' },
   { src: '/images/products/iron-core-hero.png', label: '有铁芯直线电机', href: '/products/linear-motors/' },
   { src: '/images/products/ironless-motor-hero.png', label: '无铁芯直线电机', href: '/products/ironless-motors/' },
-  { src: '/images/products/dd-motor-hero.png', label: 'DD直驱电机', href: '/products/dd-motors/' },
   { src: '/images/products/tubular-motor-hero.png', label: '微型管状电机', href: '/products/tubular-motors/' },
-  { src: '/images/platforms/platform-1.png', label: '精密运动平台', href: '/products/platforms/' },
-  { src: '/images/products/voice-coil-kplr.png', label: '音圈执行器', href: '/products/voice-coil/' },
+  { src: '/images/products/dd-motor-hero.png', label: 'DD直驱电机', href: '/products/dd-motors/' },
   { src: '/images/products/dexterous-hand-hero.png', label: '灵巧手', href: '/products/dexterous-hands/' },
+  { src: '/images/platforms/platform-1.png', label: '精密运动平台', href: '/products/platforms/' },
   { src: '/images/products/joint-module-hero.png', label: '关节模组', href: '/products/joint-modules/' },
+  { src: '/images/products/voice-coil-kplr.png', label: '音圈执行器', href: '/products/voice-coil/' },
 ];
 
 const features = [
@@ -123,7 +124,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
               {heroImages.map((img, i) => (
                 <motion.div
                   key={img.label}

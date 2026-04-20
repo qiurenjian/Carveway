@@ -11,14 +11,15 @@ import { cn } from '@/lib/utils';
 
 const filters = [
   { label: '全部', slug: '' },
+  { label: '驱动器', slug: 'servo-drivers' },
   { label: '有铁芯', slug: 'linear-motors' },
   { label: '无铁芯', slug: 'ironless-motors' },
   { label: '管状', slug: 'tubular-motors' },
   { label: 'DD直驱', slug: 'dd-motors' },
-  { label: '运动平台', slug: 'platforms' },
-  { label: '音圈', slug: 'voice-coil' },
   { label: '灵巧手', slug: 'dexterous-hands' },
+  { label: '运动平台', slug: 'platforms' },
   { label: '关节模组', slug: 'joint-modules' },
+  { label: '音圈', slug: 'voice-coil' },
 ];
 
 export default function ProductsPage() {
@@ -37,7 +38,7 @@ export default function ProductsPage() {
             产品中心
           </h1>
           <p className="mt-2 text-white/60">
-            八大产品系列，覆盖高速高精传动全场景
+            九大产品系列，覆盖高速高精传动全场景
           </p>
         </div>
       </section>
